@@ -148,6 +148,7 @@
     <ClInclude Include="..\common\atomic_intger.h" />
     <ClInclude Include="..\common\common.h" />
     <ClInclude Include="..\common\common_fun.h" />
+    <ClInclude Include="..\common\mem_pool.h" />
     <ClInclude Include="..\common\mutex.h" />
     <ClInclude Include="..\common\TimeElapsed.h" />
     <ClInclude Include="resource.h" />

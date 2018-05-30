@@ -7,6 +7,7 @@
 #include "../common/common_fun.h"
 #include "../common/mutex.h"
 #include "../common/TimeElapsed.h"
+#include "../common/mem_pool.h"
 
 class test
 {
@@ -26,28 +27,60 @@ private:
 
 using namespace baseCollect;
 
+typedef struct MyStruct
+{
+	int a[10000000];
+}MyStruct,*pMyStruct;
+
 int main()
 {
 	std::cout << "Hello World"<< std::endl;
 
 	//test t;
 	//test a(t);
-	std::string strFileName = basefunc::getFileNameFromPath("D:\\code\\svncode\\code\\3.0\\PlanD_SvnServer\\code\\rc_app\\DeepEye.exe");
+	//std::string strFileName = basefunc::getFileNameFromPath("D:\\code\\svncode\\code\\3.0\\PlanD_SvnServer\\code\\rc_app\\DeepEye.exe");
 
 
-	Mutex mutex;
+	//Mutex mutex;
 	
+	//{
+		//MutexGuard mg(mutex);
+	//}
+	
+	//{
+	//	timeElapsed te("time start");
+	//	Sleep(1000);
+	//}
+	
+#if 0
+
+
 	{
-		MutexGuard mg(mutex);
+		//ƒ⁄¥Ê≥ÿ≤‚ ‘
+		MemPool<MyStruct> g_mp;
+
+		{
+			timeElapsed te("∆’Õ®…Í«Îƒ⁄¥Ê");
+			for (int i = 0; i < 1000; i++)
+			{
+				MyStruct* ms = new MyStruct();
+				delete ms;
+			}
+		}
+
+		{
+			timeElapsed te("ƒ⁄¥Ê≥ÿ…Í«Îƒ⁄¥Ê");
+			for (int i = 0; i < 1000; i++)
+			{
+				MyStruct* ms = g_mp.get();
+				g_mp.put(ms);
+			}
+		}
+		
 	}
 	
-	{
-		timeElapsed te("time start");
-		Sleep(1000);
-	}
 	
-	
-
+#endif
 
 	getchar();
     return 0;
