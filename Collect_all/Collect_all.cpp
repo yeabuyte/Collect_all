@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include "../common/common.h"
+#include "../common/common_fun.h"
 
 class test
 {
@@ -28,7 +29,7 @@ int main()
 
 	//test t;
 	//test a(t);
-
+	std::string strFileName = basefunc::getFileNameFromPath("D:\\code\\svncode\\code\\3.0\\PlanD_SvnServer\\code\\rc_app\\DeepEye.exe");
 
 	getchar();
     return 0;

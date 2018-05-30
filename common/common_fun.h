@@ -15,10 +15,12 @@ namespace basefunc
 	inline const char *getFileNameFromPath(const char *pathName)
 	{
 		const char* slash = strrchr(pathName, '/');
-		if (slash) {
+		if (slash) 
+		{
 			return slash + 1;
 		}
-		else {
+		else 
+		{
 			const char *bslash = strrchr(pathName, '\\');
 			if (bslash) {
 				return bslash + 1;
