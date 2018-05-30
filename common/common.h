@@ -10,6 +10,9 @@
 
 #include <string>
 #include <functional>
+#include <stdint.h>
+#include <memory>
+
 
 #ifndef NDEBUG
 #include <assert.h>
@@ -35,7 +38,7 @@ namespace baseCollect
 	#undef DISALLOW_EVIL_CONSTRUCTORS
 	#define DISALLOW_EVIL_CONSTRUCTORS(TypeName)    \
     TypeName(const TypeName&) =delete;                         \
-    void operator=(const TypeName&) = delete;
+    void operator=(const TypeName&) = delete
 
 	// delete object safe
 	#define SAFE_DELETE(p)        \

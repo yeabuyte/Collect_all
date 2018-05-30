@@ -5,6 +5,7 @@
 #include <iostream>
 #include "../common/common.h"
 #include "../common/common_fun.h"
+#include "../common/mutex.h"
 
 class test
 {
@@ -22,6 +23,7 @@ protected:
 private:
 };
 
+using namespace baseCollect;
 
 int main()
 {
@@ -30,6 +32,16 @@ int main()
 	//test t;
 	//test a(t);
 	std::string strFileName = basefunc::getFileNameFromPath("D:\\code\\svncode\\code\\3.0\\PlanD_SvnServer\\code\\rc_app\\DeepEye.exe");
+
+
+	Mutex mutex;
+	
+	{
+		MutexGuard mg(mutex);
+	}
+	
+	
+
 
 	getchar();
     return 0;
