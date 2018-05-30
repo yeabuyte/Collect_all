@@ -6,6 +6,7 @@
 #include "../common/common.h"
 #include "../common/common_fun.h"
 #include "../common/mutex.h"
+#include "../common/TimeElapsed.h"
 
 class test
 {
@@ -38,6 +39,11 @@ int main()
 	
 	{
 		MutexGuard mg(mutex);
+	}
+	
+	{
+		timeElapsed te("time start");
+		Sleep(1000);
 	}
 	
 	
