@@ -51,6 +51,9 @@
     <ClInclude Include="..\common\object_pool.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\common\stack.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
