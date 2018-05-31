@@ -48,6 +48,9 @@
     <ClInclude Include="..\common\mem_pool.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\common\object_pool.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

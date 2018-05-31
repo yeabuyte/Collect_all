@@ -8,17 +8,18 @@
 #include "../common/mutex.h"
 #include "../common/TimeElapsed.h"
 #include "../common/mem_pool.h"
+#include "../common/object_pool.h"
 
 class test
 {
 public:
 	test()
 	{
-
+		std::cout <<"test()" << std::endl;
 	}
 	~test()
 	{
-
+		std::cout << "~test()" << std::endl;
 	}
 	DISALLOW_EVIL_CONSTRUCTORS(test);
 protected:
@@ -29,7 +30,7 @@ using namespace baseCollect;
 
 typedef struct MyStruct
 {
-	int a[10000000];
+	int a[1024*4];
 }MyStruct,*pMyStruct;
 
 int main()
@@ -61,7 +62,7 @@ int main()
 
 		{
 			timeElapsed te("ÆÕÍ¨ÉêÇëÄÚ´æ");
-			for (int i = 0; i < 1000; i++)
+			for (int i = 0; i < 1024; i++)
 			{
 				MyStruct* ms = new MyStruct();
 				delete ms;
@@ -70,7 +71,7 @@ int main()
 
 		{
 			timeElapsed te("ÄÚ´æ³ØÉêÇëÄÚ´æ");
-			for (int i = 0; i < 1000; i++)
+			for (int i = 0; i < 1024; i++)
 			{
 				MyStruct* ms = g_mp.get();
 				g_mp.put(ms);
@@ -81,6 +82,13 @@ int main()
 	
 	
 #endif
+
+	//¶ÔÏó³Ø
+	ObjectPool<test> ot;
+	test* t = ot.get();
+	ot.put(t);
+
+
 
 	getchar();
     return 0;
