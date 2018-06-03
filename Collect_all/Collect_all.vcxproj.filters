@@ -54,6 +54,9 @@
     <ClInclude Include="..\common\stack.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\common\thread.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -61,6 +64,9 @@
     </ClCompile>
     <ClCompile Include="Collect_all.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\thread.cpp">
+      <Filter>common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
