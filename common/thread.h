@@ -16,7 +16,7 @@
 
 namespace baseCollect
 {
-
+	
 	/// @brief 线程类
 	class Thread
 	{
@@ -63,62 +63,51 @@ namespace baseCollect
 		std::shared_ptr<std::thread> m_thread;
 	};
 
+	typedef std::shared_ptr<Thread> ThreadPtr;
+	typedef std::vector<ThreadPtr> VecThreadPtr;
 	/// @breaf 线程组
-// 	class ThreadGroup
-// 	{
-// 	public:
-// 		ThreadGroup()
-// 		{}
-// 		~ThreadGroup()
-// 		{
-// 			joinAll();
-// 			for (size_t i = 0; i < _threads.size(); ++i) {
-// 				delete _threads[i];
-// 			}
-// 
-// 			_threads.clear();
-// 		}
-// 
-// 		Thread *createThread(const ThreadCallback &threadfunc)
-// 		{
-// 			Thread *thread = new Thread(threadfunc);
-// 			_threads.push_back(thread);
-// 			return thread;
-// 		}
-// 
-// 		void addThread(Thread *thread)
-// 		{
-// 			_threads.push_back(thread);
-// 		}
-// 
-// 		void startAll()
-// 		{
-// 			for (size_t i = 0; i < _threads.size(); ++i) {
-// 				_threads[i]->start();
-// 			}
-// 		}
-// 
-// 		void joinAll()
-// 		{
-// 			for (size_t i = 0; i < _threads.size(); ++i) {
-// 				_threads[i]->join();
-// 			}
-// 		}
-// 
-// 		void stopAll()
-// 		{
-// 			for (size_t i = 0; i < _threads.size(); ++i) {
-// 				_threads[i]->stop();
-// 			}
-// 		}
-// 
-// 		size_t size() const { return _threads.size(); }
-// 
-// 	private:
-// 		THEFOX_DISALLOW_EVIL_CONSTRUCTORS(ThreadGroup);
-// 		std::vector<Thread *> _threads;
-// 	};
-// 	
+ 	class ThreadGroup
+ 	{
+ 	public:
+		DISALLOW_EVIL_CONSTRUCTORS(ThreadGroup);
+ 		ThreadGroup()
+ 		{}
+ 		~ThreadGroup()
+ 		{
+ 			joinAll();
+			m_threads.clear();
+ 		}
+
+ 		void addThread(ThreadPtr thread)
+ 		{
+			m_threads.push_back(thread);
+ 		}
+ 
+ 		void startAll()
+ 		{
+ 			for (size_t i = 0; i < m_threads.size(); ++i) {
+				m_threads[i]->start();
+ 			}
+ 		}
+ 
+ 		void joinAll()
+ 		{
+ 			for (size_t i = 0; i < m_threads.size(); ++i) {
+				m_threads[i]->join();
+ 			}
+ 		}
+ 
+ 		void stopAll()
+ 		{
+ 			for (size_t i = 0; i < m_threads.size(); ++i) {
+				m_threads[i]->stop();
+ 			}
+ 		}
+ 
+ 		size_t size() const { return m_threads.size(); }
+		VecThreadPtr m_threads;
+ 	};
+ 	
 }
 
 #endif
