@@ -57,6 +57,12 @@
     <ClInclude Include="..\common\thread.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\common\thread_pool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Semaphore.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
