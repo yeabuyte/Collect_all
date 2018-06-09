@@ -129,4 +129,4 @@ namespace baseCollect {
 
 } // namespace 
 
-#endif // _THEFOX_BASE_THREADPOOL_H_
+#endif // 
