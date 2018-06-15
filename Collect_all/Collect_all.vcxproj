@@ -151,8 +151,11 @@
     <ClInclude Include="..\common\mem_pool.h" />
     <ClInclude Include="..\common\mutex.h" />
     <ClInclude Include="..\common\object_pool.h" />
+    <ClInclude Include="..\common\ring_buffer.h" />
     <ClInclude Include="..\common\Semaphore.h" />
+    <ClInclude Include="..\common\singleton.h" />
     <ClInclude Include="..\common\stack.h" />
+    <ClInclude Include="..\common\string_unicode.h" />
     <ClInclude Include="..\common\String_util.h" />
     <ClInclude Include="..\common\thread.h" />
     <ClInclude Include="..\common\thread_pool.h" />

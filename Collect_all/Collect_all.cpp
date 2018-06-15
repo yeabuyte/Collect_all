@@ -10,7 +10,7 @@
 #include "../common/mem_pool.h"
 #include "../common/object_pool.h"
 #include "../common/String_util.h"
-
+#include "../common/singleton.h"
 class test
 {
 public:
@@ -23,6 +23,11 @@ public:
 		std::cout << "~test()" << std::endl;
 	}
 	DISALLOW_EVIL_CONSTRUCTORS(test);
+public:
+	void show()
+	{
+		printf("Hello Test\n");
+	}
 protected:
 private:
 };
@@ -93,6 +98,13 @@ int main()
 	std::string strDest = baseCollect::StringUtil::format(str,"%d%s",123,"sd");
 
 	std::string strDest1 = baseCollect::StringUtil::format("%d%s", 123, "sd");
+	
+	baseCollect::singleton<test>::instance().show();
+	baseCollect::singleton<test>::instance().show();
+	baseCollect::singleton<test>::instance().show();
+	baseCollect::singleton<test>::instance().show();
+	baseCollect::singleton<test>::instance().show();
+
 	getchar();
     return 0;
 }

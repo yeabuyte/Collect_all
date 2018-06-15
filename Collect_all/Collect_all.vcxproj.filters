@@ -69,6 +69,15 @@
     <ClInclude Include="..\common\String_util.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\common\string_unicode.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\singleton.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\ring_buffer.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
