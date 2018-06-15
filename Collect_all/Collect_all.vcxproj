@@ -153,6 +153,7 @@
     <ClInclude Include="..\common\object_pool.h" />
     <ClInclude Include="..\common\Semaphore.h" />
     <ClInclude Include="..\common\stack.h" />
+    <ClInclude Include="..\common\String_util.h" />
     <ClInclude Include="..\common\thread.h" />
     <ClInclude Include="..\common\thread_pool.h" />
     <ClInclude Include="..\common\TimeElapsed.h" />

@@ -9,6 +9,7 @@
 #include "../common/TimeElapsed.h"
 #include "../common/mem_pool.h"
 #include "../common/object_pool.h"
+#include "../common/String_util.h"
 
 class test
 {
@@ -84,12 +85,14 @@ int main()
 #endif
 
 	//∂‘œÛ≥ÿ
-	ObjectPool<test> ot;
-	test* t = ot.get();
-	ot.put(t);
+// 	ObjectPool<test> ot;
+// 	test* t = ot.get();
+// 	ot.put(t);
 
+	std::string str = "ZHANG";
+	std::string strDest = baseCollect::StringUtil::format(str,"%d%s",123,"sd");
 
-
+	std::string strDest1 = baseCollect::StringUtil::format("%d%s", 123, "sd");
 	getchar();
     return 0;
 }
