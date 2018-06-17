@@ -78,6 +78,12 @@
     <ClInclude Include="..\common\ring_buffer.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\common\read_write_lock.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\debug_win.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

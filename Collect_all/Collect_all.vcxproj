@@ -148,9 +148,11 @@
     <ClInclude Include="..\common\atomic_intger.h" />
     <ClInclude Include="..\common\common.h" />
     <ClInclude Include="..\common\common_fun.h" />
+    <ClInclude Include="..\common\debug_win.h" />
     <ClInclude Include="..\common\mem_pool.h" />
     <ClInclude Include="..\common\mutex.h" />
     <ClInclude Include="..\common\object_pool.h" />
+    <ClInclude Include="..\common\read_write_lock.h" />
     <ClInclude Include="..\common\ring_buffer.h" />
     <ClInclude Include="..\common\Semaphore.h" />
     <ClInclude Include="..\common\singleton.h" />

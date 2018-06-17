@@ -11,6 +11,10 @@
 #include "../common/object_pool.h"
 #include "../common/String_util.h"
 #include "../common/singleton.h"
+#include "../common/read_write_lock.h"
+
+#include "../common/debug_win.h"
+
 class test
 {
 public:
@@ -39,6 +43,33 @@ typedef struct MyStruct
 	int a[1024*4];
 }MyStruct,*pMyStruct;
 
+
+int g_count = 0;
+readwrite_lock rl;
+void fun()
+{
+	while (1)
+	{
+		rl.readLock();
+		printf("fun():%d\n", g_count);
+		rl.readUnlock();
+		Sleep(1000);
+		
+	}
+	
+}
+void fun1()
+{
+	while (1)
+	{
+		rl.readLock();
+		printf("fun1():%d\n", g_count);
+		rl.readUnlock();
+		Sleep(1000);
+
+	}
+
+}
 int main()
 {
 	std::cout << "Hello World"<< std::endl;
@@ -93,17 +124,43 @@ int main()
 // 	ObjectPool<test> ot;
 // 	test* t = ot.get();
 // 	ot.put(t);
+// 
+// 	std::string str = "ZHANG";
+// 	std::string strDest = baseCollect::StringUtil::format(str,"%d%s",123,"sd");
+// 
+// 	std::string strDest1 = baseCollect::StringUtil::format("%d%s", 123, "sd");
+// 	
+// 	baseCollect::singleton<test>::instance().show();
+// 	baseCollect::singleton<test>::instance().show();
+// 	baseCollect::singleton<test>::instance().show();
+// 	baseCollect::singleton<test>::instance().show();
+// 	baseCollect::singleton<test>::instance().show();
 
-	std::string str = "ZHANG";
-	std::string strDest = baseCollect::StringUtil::format(str,"%d%s",123,"sd");
 
-	std::string strDest1 = baseCollect::StringUtil::format("%d%s", 123, "sd");
+	//
 	
-	baseCollect::singleton<test>::instance().show();
-	baseCollect::singleton<test>::instance().show();
-	baseCollect::singleton<test>::instance().show();
-	baseCollect::singleton<test>::instance().show();
-	baseCollect::singleton<test>::instance().show();
+	
+// 	std::thread t(fun);
+// 	t.detach();
+// 	std::thread t1(fun1);
+// 	t1.detach();
+// 
+// 	while (1)
+// 	{
+// 		rl.writeLock();
+// 		printf("main:%d\n", ++g_count);
+// 		rl.writeUnlock();
+// 		Sleep(5000);
+// 		
+// 	}
+
+	//±¿¿£–≈œ¢
+	SET_UNHANDLED_EXCEPTION_FILTER;
+
+	int* p = nullptr;
+
+	*p = 4;
+
 
 	getchar();
     return 0;
