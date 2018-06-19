@@ -16,6 +16,9 @@
     <Filter Include="common">
       <UniqueIdentifier>{3f9551b1-2c60-4c5a-b89e-e19c61c19692}</UniqueIdentifier>
     </Filter>
+    <Filter Include="log_source">
+      <UniqueIdentifier>{26dbae14-6e55-47ea-a57e-689cc4721392}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -84,6 +87,24 @@
     <ClInclude Include="..\common\debug_win.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\log_source\logging.h">
+      <Filter>log_source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\thread_util.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\timestamp.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\log_source\log_stdout.h">
+      <Filter>log_source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\log_source\log_file.h">
+      <Filter>log_source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\file_tools.h">
+      <Filter>common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -94,6 +115,15 @@
     </ClCompile>
     <ClCompile Include="..\common\thread.cpp">
       <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log_source\logging.cpp">
+      <Filter>log_source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log_source\log_stdout.cpp">
+      <Filter>log_source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log_source\log_file.cpp">
+      <Filter>log_source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

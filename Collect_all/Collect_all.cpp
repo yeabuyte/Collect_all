@@ -14,7 +14,27 @@
 #include "../common/read_write_lock.h"
 
 #include "../common/debug_win.h"
+#include "../log_source/logging.h"
+#include "../log_source/log_stdout.h"
 
+class test1
+{
+public:
+	test1()
+	{
+		std::cout << "Test1" << std::endl;
+	}
+	~test1()
+	{
+		std::cout << "~Test1" << std::endl;
+	}
+	void show()
+	{
+		std::cout << "test1::show" << std::endl;
+	}
+protected:
+private:
+};
 class test
 {
 public:
@@ -26,7 +46,11 @@ public:
 	{
 		std::cout << "~test()" << std::endl;
 	}
-	DISALLOW_EVIL_CONSTRUCTORS(test);
+	//DISALLOW_EVIL_CONSTRUCTORS(test);
+	void operator=(test1& t1)
+	{
+		t1.show();
+	}
 public:
 	void show()
 	{
@@ -35,6 +59,7 @@ public:
 protected:
 private:
 };
+
 
 using namespace baseCollect;
 
@@ -157,10 +182,10 @@ int main()
 	//崩溃信息
 	SET_UNHANDLED_EXCEPTION_FILTER;
 
-	int* p = nullptr;
-
-	*p = 4;
-
+	//设置控制台数据
+	SET_LOG_STDOUT("consol");
+	BASECOLLECT_LOG(LOGLEVEL_TRACE) << "123";
+	
 
 	getchar();
     return 0;
