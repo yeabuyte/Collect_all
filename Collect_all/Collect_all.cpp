@@ -16,6 +16,7 @@
 #include "../common/debug_win.h"
 #include "../log_source/logging.h"
 #include "../log_source/log_stdout.h"
+#include "../log_source/log_file.h"
 
 class test1
 {
@@ -183,7 +184,14 @@ int main()
 	SET_UNHANDLED_EXCEPTION_FILTER;
 
 	//设置控制台数据
-	SET_LOG_STDOUT("consol");
+	//SET_LOG_STDOUT("consol");
+
+	//写文件
+	SET_LOG_FILE("\\logs","client");
+	while (1)
+	{
+		BASECOLLECT_LOG(LOGLEVEL_TRACE) << "你好，中国123";
+	}
 	BASECOLLECT_LOG(LOGLEVEL_TRACE) << "123";
 	
 
