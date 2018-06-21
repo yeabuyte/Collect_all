@@ -19,6 +19,9 @@
     <Filter Include="log_source">
       <UniqueIdentifier>{26dbae14-6e55-47ea-a57e-689cc4721392}</UniqueIdentifier>
     </Filter>
+    <Filter Include="net">
+      <UniqueIdentifier>{d710f22d-9451-4c02-8e01-4e3e55bfa89e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -105,6 +108,12 @@
     <ClInclude Include="..\common\file_tools.h">
       <Filter>common</Filter>
     </ClInclude>
+    <ClInclude Include="..\net\socket.h">
+      <Filter>net</Filter>
+    </ClInclude>
+    <ClInclude Include="..\net\inet_address.h">
+      <Filter>net</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -124,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="..\log_source\log_file.cpp">
       <Filter>log_source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\net\socket.cpp">
+      <Filter>net</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

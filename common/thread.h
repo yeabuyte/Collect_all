@@ -12,7 +12,7 @@
 #include <thread>
 #include <functional>
 #include "common.h"
-
+#include <assert.h>
 
 namespace baseCollect
 {
