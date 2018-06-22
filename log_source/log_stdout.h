@@ -5,8 +5,8 @@
 *@about:		控制台输出日志
 ********************************************************************/
 
-#ifndef _LOGSYSLOG_H_
-#define _LOGSYSLOG_H_
+#ifndef _LOGSTDOUTLOG_H_
+#define _LOGSTDOUTLOG_H_
 
 #include <iostream>
 #include "logging.h"

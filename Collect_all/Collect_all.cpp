@@ -17,6 +17,8 @@
 #include "../log_source/logging.h"
 #include "../log_source/log_stdout.h"
 #include "../log_source/log_file.h"
+#include "../net/inet_address.h"
+#include "../log_source/log_syslog.h"
 
 class test1
 {
@@ -187,10 +189,15 @@ int main()
 	//SET_LOG_STDOUT("consol");
 
 	//写文件
-	SET_LOG_FILE("\\logs","client");
+	//SET_LOG_FILE("\\logs","client");
+
+	//写服务器
+	net::InetAddress ia = net::InetAddress("127.0.0.1",60002);
+	SET_LOG_SYSLOG("SYSLOG",ia);
 	while (1)
 	{
 		BASECOLLECT_LOG(LOGLEVEL_TRACE) << "你好，中国123";
+		Sleep(1000);
 	}
 	BASECOLLECT_LOG(LOGLEVEL_TRACE) << "123";
 	

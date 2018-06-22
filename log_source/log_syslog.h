@@ -1,8 +1,9 @@
-/**
-* @file log_syslog.h
-* @brief log to syslog server
-* @ahthor macwe1024 at gmail dot com
-*/
+/*******************************************************************
+*@filename:     log_syslog.h
+*@author:       zxj
+*@date:         2018/6/22 14:51
+*@about:		log to syslog server
+********************************************************************/
 
 #ifndef _LOGSYSLOG_H_
 #define _LOGSYSLOG_H_
@@ -13,35 +14,34 @@
 #include <sys/socket.h>
 #define SOCKET int
 #endif
-
+#include <string>
 #include "../common/common.h"
 #include "../common/mutex.h"
-#include "../log_source/log_stdout.h"
-//#include <net/inet_address.h>
+#include "../log_source/logging.h"
+#include "../net/inet_address.h"
+
 
 namespace baseCollect
 {
-
 class LogSyslog
 {
 public:
-	LogSyslog(const string& basename, const net::InetAddress &serverAddr);
+	DISALLOW_EVIL_CONSTRUCTORS(LogSyslog);
+	LogSyslog(const std::string& basename, const net::InetAddress &serverAddr);
 	~LogSyslog();
 
-	void append(const string &message);
+	void append(const std::string &message);
 	bool init();
 	
 private:
-	THEFOX_DISALLOW_EVIL_CONSTRUCTORS(LogSyslog);
-
-	const string _basename;
+	const std::string _basename;
 	net::InetAddress _serverAddr;
 	SOCKET _sockfd;
 	Mutex _mutex;
 };
 
-} // namespace thefox
+} // namespace baseCollect
 
-void THEFOX_SET_LOG_SYSLOG(const string& basename, const net::InetAddress &serverAddr);
+void SET_LOG_SYSLOG(const std::string& basename, const baseCollect::net::InetAddress &serverAddr);
 
 #endif // _THEFOX_LOGSYSLOG_H_

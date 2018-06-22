@@ -1,10 +1,11 @@
-#include <log/log_syslog.h>
+#include "log_syslog.h"
+#include "../net/socket.h"
 
-using namespace thefox;
+using namespace baseCollect;
 
 static LogSyslog *g_logSyslog = NULL;
 
-void THEFOX_SET_LOG_STDOUT(const string& basename, const net::InetAddress &serverAddr)
+void SET_LOG_SYSLOG(const string& basename, const net::InetAddress &serverAddr)
 {
 	if (g_logSyslog) {
 		delete g_logSyslog;
@@ -25,25 +26,30 @@ LogSyslog::LogSyslog(const string& basename, const net::InetAddress &serverAddr)
 	, _serverAddr(serverAddr)
 
 {
-	setLogHandler(std::bind(&LogSyslog::append, this, _1));
+	SOCKET_STARTUP;
+	init();
+	thefoxSetLogHandler(logSyslogAppend);
 }
 
 LogSyslog::~LogSyslog()
 {
+	closesocket(_sockfd);
+	SOCKET_CLEANUP;
 }
 
 void LogSyslog::append(const string &message)
 {
 	MutexGuard lock(_mutex);
 	if (_sockfd >= 0) {
-		::sendto(_sockfd, message.c_str(), message.length(), 0, 
-				(struct sockaddr *)&_serverAddr.getSockAddrInet(), 
-				sizeof(struct sockaddr_in));
+		int rtn = ::sendto(_sockfd, message.c_str(), message.length(), 0,
+			(struct sockaddr *)&_serverAddr.getSockAddrInet(),
+			sizeof(struct sockaddr_in));
+		int a = rtn;
 	}
 }
 
 bool LogSyslog::init()
 {
-	_sockfd = ::socket(AF_INET, SOCK_DGRAM, 0);
+	_sockfd = ::socket(PF_INET, SOCK_DGRAM, 0);
 	return _sockfd >= 0;
 }

@@ -114,6 +114,9 @@
     <ClInclude Include="..\net\inet_address.h">
       <Filter>net</Filter>
     </ClInclude>
+    <ClInclude Include="..\log_source\log_syslog.h">
+      <Filter>log_source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -136,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="..\net\socket.cpp">
       <Filter>net</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log_source\log_syslog.cpp">
+      <Filter>log_source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

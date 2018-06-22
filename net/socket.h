@@ -56,6 +56,6 @@ private:
 };
 
 } // namespace net
-} // namespace thefox
+} // namespace baseCollect
 
 #endif // _THEFOX_NET_SOCKET_H_
