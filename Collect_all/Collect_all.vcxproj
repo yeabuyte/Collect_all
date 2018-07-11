@@ -167,6 +167,7 @@
     <ClInclude Include="..\common\timestamp.h" />
     <ClInclude Include="..\common\uuid.h" />
     <ClInclude Include="..\log_source\logging.h" />
+    <ClInclude Include="..\log_source\log\logger.h" />
     <ClInclude Include="..\log_source\log_file.h" />
     <ClInclude Include="..\log_source\log_stdout.h" />
     <ClInclude Include="..\log_source\log_syslog.h" />
@@ -184,6 +185,9 @@
     <ClCompile Include="..\log_source\logging.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\log_source\log\logger.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\log_source\log_file.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>

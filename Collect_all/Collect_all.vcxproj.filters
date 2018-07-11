@@ -22,6 +22,9 @@
     <Filter Include="net">
       <UniqueIdentifier>{d710f22d-9451-4c02-8e01-4e3e55bfa89e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="log_source\log">
+      <UniqueIdentifier>{060cecba-0edf-4803-9173-a23158472ead}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -117,6 +120,9 @@
     <ClInclude Include="..\log_source\log_syslog.h">
       <Filter>log_source</Filter>
     </ClInclude>
+    <ClInclude Include="..\log_source\log\logger.h">
+      <Filter>log_source\log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -142,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="..\log_source\log_syslog.cpp">
       <Filter>log_source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log_source\log\logger.cpp">
+      <Filter>log_source\log</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

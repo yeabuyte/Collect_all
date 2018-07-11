@@ -13,7 +13,6 @@
 #include "common.h"
 #include "mutex.h"
 
-
 namespace baseCollect {
 
 	template<typename T>
@@ -50,7 +49,9 @@ namespace baseCollect {
 				_freeBlocks.pop_back();
 			}
 			else {
-				if (_freeHead == (_chunks.back() + (_chunks.size() * kDefaultBlockSize))) {
+				//if (_freeHead == (_chunks.back() + (_chunks.size() * kDefaultBlockSize))) {
+				if (_freeHead != _chunks.back())
+				{
 					addChunk();
 					_freeHead = _chunks.back();
 				}
@@ -80,7 +81,7 @@ namespace baseCollect {
 		std::vector<T *> _chunks;
 		std::vector<T *> _freeBlocks;
 
-		static const size_t kDefaultBlockSize = 128;
+		static const size_t kDefaultBlockSize = 1024;
 	};
 
 } // namespace
