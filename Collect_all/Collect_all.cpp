@@ -208,7 +208,7 @@ int main()
 	//SET_LOG_STDOUT("consol");
 
 	//写文件
-	SET_LOG_FILE("\\logs","client");
+	//SET_LOG_FILE("\\logs","client");
 
 	//写服务器
 	//net::InetAddress ia = net::InetAddress("127.0.0.1",60002);

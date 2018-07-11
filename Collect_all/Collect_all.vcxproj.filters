@@ -25,6 +25,9 @@
     <Filter Include="log_source\log">
       <UniqueIdentifier>{060cecba-0edf-4803-9173-a23158472ead}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{930d4b93-1d72-4c6e-ab0b-ba66671079a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
