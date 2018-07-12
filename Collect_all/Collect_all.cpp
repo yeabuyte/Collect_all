@@ -22,6 +22,16 @@
 
 #include "../log_source/log/logger.h"
 
+//lua test
+#include "../Script/script.h"
+#include "../Script/testlua.h"
+
+extern "C"
+{
+	int  tolua_tolua_open(lua_State* tolua_S);
+}
+
+
 class test1
 {
 public:
@@ -223,12 +233,23 @@ int main()
 	//std::thread t(fun1);
 	//t.detach();
 	
- 	while (1)
- 	{
-		debug_log("中国人民中国人");
-			
- 	}
+//  	while (1)
+//  	{
+// 		debug_log("中国人民中国人");
+// 			
+//  	}
 
+ 	lua_State *l = lua_open();
+ 	luaL_openlibs(l);
+ 
+ 	///LuaAnimal::Register(l);
+ 	tolua_tolua_open(l);
+ 
+ 	if (luaL_dofile(l, "main.lua"))
+ 	{  // load and call
+		std::cout <<"lua 文件加载失败" << std::endl;
+ 	}
+ 	lua_close(l);
 	getchar();
     return 0;
 }

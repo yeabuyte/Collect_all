@@ -126,6 +126,12 @@
     <ClInclude Include="..\log_source\log\logger.h">
       <Filter>log_source\log</Filter>
     </ClInclude>
+    <ClInclude Include="..\Script\testlua.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Script\script.h">
+      <Filter>Script</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -155,10 +161,21 @@
     <ClCompile Include="..\log_source\log\logger.cpp">
       <Filter>log_source\log</Filter>
     </ClCompile>
+    <ClCompile Include="..\Script\testlua.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Script\test_tolua.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Collect_all.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Script\testlua.pkg">
+      <Filter>Script</Filter>
+    </None>
   </ItemGroup>
 </Project>

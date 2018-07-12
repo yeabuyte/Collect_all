@@ -1,0 +1,13 @@
+
+
+$#include "testlua.h"
+class TestLua
+{
+public:
+	TestLua(int a);
+	~TestLua();
+
+	void show();
+private:
+	int m_a;
+};
