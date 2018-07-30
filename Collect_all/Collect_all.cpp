@@ -127,6 +127,18 @@ void fun1()
 	}
 
 }
+
+
+int lua_add(lua_State *L)
+{
+	int x = lua_tonumber(L, 1);
+	int y = lua_tonumber(L, 2);
+	int ret = x + y;
+	printf("lua_add: x(%d) + y(%d) = %d\n", x, y, ret);
+	lua_pushnumber(L, ret);
+	return 1;
+}
+
 int main()
 {
 	std::cout << "Hello World"<< std::endl;
@@ -242,8 +254,15 @@ int main()
  	lua_State *l = lua_open();
  	luaL_openlibs(l);
  
- 	///LuaAnimal::Register(l);
- 	tolua_tolua_open(l);
+ 	
+ 	//tolua_tolua_open(l);
+
+	// ÍùluaÖĞ×¢²áº¯Êı    
+	lua_pushvalue(l, LUA_GLOBALSINDEX);
+	lua_pushstring(l, "lua_add");
+	lua_pushcfunction(l, lua_add);
+	lua_rawset(l, -3);
+	lua_pop(l, 1);
  
  	if (luaL_dofile(l, "main.lua"))
  	{  // load and call

@@ -28,6 +28,9 @@
     <Filter Include="Script">
       <UniqueIdentifier>{930d4b93-1d72-4c6e-ab0b-ba66671079a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="LoadPy">
+      <UniqueIdentifier>{734d1e3c-b5f2-487d-972e-6e56aa881b5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -132,6 +135,9 @@
     <ClInclude Include="..\Script\script.h">
       <Filter>Script</Filter>
     </ClInclude>
+    <ClInclude Include="..\LoadPy\Py_load.h">
+      <Filter>LoadPy</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -166,6 +172,9 @@
     </ClCompile>
     <ClCompile Include="..\Script\test_tolua.cpp">
       <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LoadPy\Py_load.cpp">
+      <Filter>LoadPy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
