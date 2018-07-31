@@ -13,10 +13,11 @@ namespace baseCollect
 {
 	class Py_load
 	{
+	public:
 		//加载Python环境
 		static bool LoadPyEnv(const char* pszPath = "");
 		//释放Python环境
-
+		static void ReleasePyEnv();
 	};
 }
 #endif

@@ -23,3 +23,8 @@ bool Py_load::LoadPyEnv(const char* pszPath /* = "" */)
 
 	return (!Py_IsInitialized());
 }
+
+void Py_load::ReleasePyEnv()
+{
+	Py_Finalize();
+}

@@ -26,6 +26,10 @@
 #include "../Script/script.h"
 #include "../Script/testlua.h"
 
+
+//Py_load
+#include "../LoadPy/Py_load.h"
+
 extern "C"
 {
 	int  tolua_tolua_open(lua_State* tolua_S);
@@ -269,6 +273,14 @@ int main()
 		std::cout <<"lua 文件加载失败" << std::endl;
  	}
  	lua_close(l);
+
+
+// 	//初始化Python环境
+// 	if (baseCollect::Py_load::LoadPyEnv())
+// 	{
+// 		std::cout << "Python环境加载失败" << std::endl;
+// 	}
+
 	getchar();
     return 0;
 }
