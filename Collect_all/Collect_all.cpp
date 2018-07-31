@@ -275,12 +275,20 @@ int main()
  	lua_close(l);
 
 
-// 	//初始化Python环境
-// 	if (baseCollect::Py_load::LoadPyEnv())
-// 	{
-// 		std::cout << "Python环境加载失败" << std::endl;
-// 	}
+ 	//初始化Python环境
+ 	if (baseCollect::Py_load::LoadPyEnv())
+ 	{
+ 		std::cout << "Python环境加载失败" << std::endl;
+ 	}
 
+	{
+		//加载Python
+
+	
+	}
+
+
+	baseCollect::Py_load::ReleasePyEnv();
 	getchar();
     return 0;
 }
